@@ -20,7 +20,11 @@ yarn-error.log
 .settings/
 *.sublime-workspace
 
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+
 # Visual Studio Code
+.vscode/
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
