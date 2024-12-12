@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PrivacyComponent } from './privacy.component';
+import { MasterComponent } from './master.component';
 
-describe('PrivacyComponent', () => {
-  let component: PrivacyComponent;
-  let fixture: ComponentFixture<PrivacyComponent>;
+describe('MasterComponent', () => {
+  let component: MasterComponent;
+  let fixture: ComponentFixture<MasterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PrivacyComponent]
+      declarations: [MasterComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PrivacyComponent);
+    fixture = TestBed.createComponent(MasterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

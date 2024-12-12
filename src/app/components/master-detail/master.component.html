@@ -1,0 +1,64 @@
+<br />
+<div class="row">
+    <div class="col-1"> </div>
+    <div class="col-10"> 
+        <h1>Ejercicio: Maestro - Detalle</h1>
+        <hr />
+        <br />
+    </div>
+    <div class="col-1"> </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-1"> </div>
+    <div class="col-5"> 
+        <h2>Listado de Clientes</h2>
+        <hr />
+        <table class="table table-responsive table-striped">
+            <thead>
+                <tr>
+                    <td (click)="onSort('id')" class="clickable" style="width: 10%;"><b>ID</b></td>
+                    <td (click)="onSort('firstname')" class="clickable" style="width: 20%;"><b>Nombre</b></td>
+                    <td (click)="onSort('lastname')" class="clickable" style="width: 25%;"><b>Apellidos</b></td>
+                    <td (click)="onSort('office')" class="clickable" style="width: 15%;"><b>Ciudad</b></td>
+                    <td (click)="onSort('online')" class="clickable" style="width: 15%;"><b>Conectado</b></td>
+                    <td style="width: 15%;"> </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let userItem of usersList | sort : field : order">
+                    <td>{{userItem.id}}</td>
+                    <td>{{userItem.firstname}}</td>
+                    <td>{{userItem.lastname}}</td>
+                    <td>{{userItem.office}}</td>
+                    <td>{{userItem.online | siono }}</td>
+                    <td>
+                        <button class="btn btn-success btn-sm" (click)="onClickFicha(userItem)">ficha</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div *ngIf="demo">
+            <p><b>Seleccionado:</b> {{userSelect.firstname | uppercase}} {{userSelect.lastname | lowercase}}</p>
+            <p><b>Fecha: </b> {{currentDate | date : 'short'}}</p>
+            <p><b>Fecha: </b> {{currentDate | date : 'medium'}}</p>
+            <p><b>Fecha: </b> {{currentDate | date : 'long'}}</p>
+            <p><b>Fecha: </b> {{currentDate | date : 'full'}}</p>
+            <p><b>Fecha: </b> {{currentDate | date : 'fullDate'}}</p>
+            <p><b>Fecha: </b> {{currentDate | date : 'dd/MM/yyyy'}}</p>
+            <p><b>Observable: </b> {{time | async | date : 'medium'}}</p>
+            <p><b>Pipe Code: </b> {{demo}} vs {{demoText}}</p>
+            <p><b>Number in Service: </b> {{demoNumber}}</p>
+        </div>
+    </div>
+    <div class="col-5"> 
+        <!-- Incorporamos el HTML del detalle dentro del HTML del maestro -->
+        <app-detail #detail1 [userElement]="userSelect" (onSave)="onSaveUser($event)"></app-detail>
+    </div>
+    <div class="col-1"> </div>
+</div>
+<br />
+<br />
+<br />
+<br />

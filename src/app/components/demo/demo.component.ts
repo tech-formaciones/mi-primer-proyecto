@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-home',
+  selector: 'demo-home',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  templateUrl: './demo.component.html',
+  styleUrl: './demo.component.css'
 })
-export class HomeComponent {
+export class DemoComponent {
   nombre: string = 'Borja';
   apellido: string = 'Cabeza';
   imagen: string = "https://images.ecestaticos.com/X6jKxwFNcSPcl3CEQuItXawaAc8=/0x0:2097x1430/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F614%2F40c%2Ff02%2F61440cf024b55a412a97e4c4c59fffbd.jpg";  
